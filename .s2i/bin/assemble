@@ -1,9 +1,12 @@
 #!/bin/bash -e
 
-echo "---> (custom) Copying application source ..."
+echo "---> (save-artifacts) Restoring saved artifacts from prior build ..."
+cp -Rf /tmp/artifacts/. ./
+
+echo "---> (save-artifacts) Copying application source ..."
 cp -Rf /tmp/src/. ./
 
-echo "---> (custom) Installing dependencies ..."
+echo "---> (save-artifacts) Installing dependencies ..."
 pip install --user -r requirements.txt
 
 # Fix source directory permissions
